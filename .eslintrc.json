@@ -13,7 +13,7 @@
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "./tsconfig.json"
+    "project": true
   },
   "rules": {
     // "react/jsx-no-target-blank": "off",
