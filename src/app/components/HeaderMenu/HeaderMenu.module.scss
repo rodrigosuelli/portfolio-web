@@ -1,3 +1,13 @@
 .headerMenu {
   padding: 16px;
 }
+
+.headerLinks {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .headerLinks {
+    display: unset;
+  }
+}
