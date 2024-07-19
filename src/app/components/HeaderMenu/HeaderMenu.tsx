@@ -5,8 +5,9 @@ import styles from './HeaderMenu.module.scss';
 export default function HeaderMenu() {
   return (
     <header className={classNames(styles.headerMenu)}>
-      <Link href="/">{'<RS />'}</Link>
-      <h1>Header Menu</h1>
+      <Link className={classNames(styles.logo)} href="/">
+        {'<RS />'}
+      </Link>
       <nav className={classNames(styles.headerLinks)}>
         <Link href="#Sobre">Sobre</Link>
         <Link href="#Habilidades">Habilidades</Link>
@@ -14,7 +15,7 @@ export default function HeaderMenu() {
         <Link href="#Contato">Contato</Link>
       </nav>
       <div className={classNames(styles.headerButtons)}>
-        <div>Hamburguer Menu</div>
+        <button type="button">Hamburguer</button>
       </div>
     </header>
   );
