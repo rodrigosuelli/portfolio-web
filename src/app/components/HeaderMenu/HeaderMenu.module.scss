@@ -1,25 +1,55 @@
 .headerMenu {
-  padding: 16px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 10px;
+  height: 68px;
 }
 
 .logo {
   width: fit-content;
+  text-wrap: nowrap;
+}
+
+.hamburguerBtn {
+  display: initial;
+}
+
+.navContainer {
+  display: none;
 }
 
 .headerLinks {
   display: none;
 }
 
+.divider {
+  width: 2px;
+  height: 24px;
+  background: var(--gray-100);
+}
+
 .headerButtons {
   display: flex;
-  justify-content: flex-end;
+  gap: 16px;
+  align-items: center;
 }
 
 @media only screen and (min-width: 768px) {
+  .navContainer {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
   .headerLinks {
-    display: unset;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .hamburguerBtn {
+    display: none;
   }
 }
