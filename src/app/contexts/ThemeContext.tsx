@@ -34,12 +34,12 @@ export default function ThemeContextComp({
   // }
 
   const [theme, setTheme] = useState<ThemeContextType['theme']>(() => {
-    // if (typeof window !== 'undefined') {
-    const localStorageTheme = window.localStorage.getItem('theme');
-    if (localStorageTheme) {
-      return localStorageTheme === 'dark' ? 'dark' : 'light';
+    if (typeof window !== 'undefined') {
+      const localStorageTheme = window.localStorage.getItem('theme');
+      if (localStorageTheme) {
+        return localStorageTheme === 'dark' ? 'dark' : 'light';
+      }
     }
-    // }
     return isDarkMode ? 'dark' : 'light';
   });
   // const [theme, setTheme] = useState<'light' | 'dark'>(
