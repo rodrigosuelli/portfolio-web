@@ -24,14 +24,14 @@ export default function ThemeContextComp({
 }: {
   children: React.ReactNode;
 }) {
-  const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)', {
-    initializeWithValue: false,
-  });
+  const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   // let localStorageTheme;
   // if (typeof window !== 'undefined') {
   //   localStorageTheme =
   //     window.localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
   // }
+
+  console.log(isDarkMode);
 
   const [theme, setTheme] = useState<ThemeContextType['theme']>(() => {
     if (typeof window !== 'undefined') {
@@ -49,7 +49,7 @@ export default function ThemeContextComp({
   //     : 'light'
   // );
 
-  console.log(theme);
+  // console.log(theme);
 
   // useEffect(() => {
   //   if (typeof window !== 'undefined') {
