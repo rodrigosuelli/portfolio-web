@@ -1,8 +1,19 @@
+'use client';
+
 import Link from 'next/link';
 import classNames from 'classnames';
+import { useTheme } from '@/app/contexts/ThemeContext';
+import { useEffect, useState } from 'react';
 import styles from './HeaderMenu.module.scss';
 
 export default function HeaderMenu() {
+  const { theme, handleSwitchTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <header className={classNames([styles.headerMenu])}>
       <Link className={classNames(styles.logo)} href="/">
@@ -20,9 +31,19 @@ export default function HeaderMenu() {
         </nav>
         <div className={classNames(styles.divider)}></div>
         <div className={classNames(styles.headerButtons)}>
-          <button className={classNames(styles.btnBaixarCv)} type="button">
-            Switch Theme
-          </button>
+          {!mounted ? (
+            <button className={classNames(styles.btnBaixarCv)} type="button">
+              Light Mode
+            </button>
+          ) : (
+            <button
+              onClick={handleSwitchTheme}
+              className={classNames(styles.btnBaixarCv)}
+              type="button"
+            >
+              {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}
+            </button>
+          )}
           <button className={classNames(styles.btnBaixarCv)} type="button">
             Baixar CV
           </button>
