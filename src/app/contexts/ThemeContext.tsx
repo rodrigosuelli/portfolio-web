@@ -6,6 +6,7 @@ import React, {
   useContext,
   useCallback,
   useMemo,
+  useEffect,
 } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 
@@ -24,14 +25,9 @@ export default function ThemeContextComp({
 }: {
   children: React.ReactNode;
 }) {
-  const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  // let localStorageTheme;
-  // if (typeof window !== 'undefined') {
-  //   localStorageTheme =
-  //     window.localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
-  // }
-
-  console.log(isDarkMode);
+  const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)', {
+    initializeWithValue: true,
+  });
 
   const [theme, setTheme] = useState<ThemeContextType['theme']>(() => {
     if (typeof window !== 'undefined') {
@@ -42,23 +38,29 @@ export default function ThemeContextComp({
     }
     return isDarkMode ? 'dark' : 'light';
   });
-  // const [theme, setTheme] = useState<'light' | 'dark'>(
-  //   typeof window !== 'undefined' &&
-  //     window.localStorage.getItem('theme') === 'dark'
-  //     ? 'dark'
-  //     : 'light'
-  // );
 
-  // console.log(theme);
+  useEffect(() => {
+    const localStorageTheme = window.localStorage.getItem('theme');
 
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     const storageTheme = window.localStorage.getItem('theme');
-  //     setTheme(storageTheme === 'dark' ? 'dark' : 'light');
-  //   }
-  // }, []);
-
-  // const currentTheme = isDarkMode || theme === 'dark' ? 'dark' : 'light';
+    // if (localStorageTheme) {
+    //   if (localStorageTheme === 'dark') {
+    //     setTheme('dark');
+    //   } else {
+    //     setTheme('light');
+    //   }
+    // } else if (isDarkMode) {
+    //   setTheme('dark');
+    // } else {
+    //   setTheme('light');
+    // }
+    if (!localStorageTheme) {
+      if (isDarkMode) {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
+    }
+  }, [isDarkMode]);
 
   const handleSwitchTheme: ThemeContextType['handleSwitchTheme'] =
     useCallback(() => {
@@ -77,19 +79,6 @@ export default function ThemeContextComp({
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      {/* {isDarkMode ? (
-        <style jsx global>{`
-          html {
-            color-scheme: dark;
-          }
-        `}</style>
-      ) : (
-        <style jsx global>{`
-          html {
-            color-scheme: light;
-          }
-        `}</style>
-      )} */}
       {theme === 'dark' ? (
         <style jsx global>{`
           html {
@@ -103,19 +92,6 @@ export default function ThemeContextComp({
           }
         `}</style>
       )}
-      {/* {currentTheme === 'dark' ? (
-        <style jsx global>{`
-          html {
-            color-scheme: dark;
-          }
-        `}</style>
-      ) : (
-        <style jsx global>{`
-          html {
-            color-scheme: light;
-          }
-        `}</style>
-      )} */}
       {children}
     </ThemeContext.Provider>
   );
