@@ -1,10 +1,13 @@
+@use '../../sass/utils' as utils;
+@use '../../sass/variables' as variables;
+
 .headerMenu {
-  padding: 0 16px;
+  padding: 0 utils.pxToRem(16px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  height: 68px;
+  gap: utils.pxToRem(10px);
+  height: utils.pxToRem(68px);
 }
 
 .logo {
@@ -26,26 +29,26 @@
 
 .divider {
   width: 2px;
-  height: 24px;
+  height: utils.pxToRem(24px);
   background: var(--gray-100);
 }
 
 .headerButtons {
   display: flex;
-  gap: 16px;
+  gap: utils.pxToRem(16px);
   align-items: center;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: variables.$tablet-min-width) {
   .navContainer {
     display: flex;
-    gap: 24px;
+    gap: utils.pxToRem(24px);
     align-items: center;
   }
 
   .headerLinks {
     display: flex;
-    gap: 24px;
+    gap: utils.pxToRem(24px);
     align-items: center;
   }
 

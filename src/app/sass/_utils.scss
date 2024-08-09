@@ -1,0 +1,25 @@
+/**
+ * Convert font-size from px to rem with px fallback
+ *
+ * @param $size - the value in pixel you want to convert
+ *
+ * e.g. p {@include fontSize(12px);}
+ *
+ */
+@use 'sass:math';
+
+// Function for converting a px to rem.
+@function pxToRem($size) {
+  @return math.div($size, 16px) * 1rem;
+}
+
+// Function for converting a px to em.
+@function pxToEm($size) {
+  @return math.div($size, 16px) * 1em;
+}
+
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: pxToRem($size);
+}

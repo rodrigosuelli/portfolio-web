@@ -1,0 +1,4 @@
+@use './_utils.scss' as utils;
+
+$tablet-min-width: utils.pxToEm(768px);
+$desktop-min-width: utils.pxToEm(1024px);

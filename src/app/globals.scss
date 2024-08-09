@@ -1,3 +1,5 @@
+@use './sass/_utils.scss' as utils;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -24,9 +26,7 @@
   --gray-950: #030712;
   --emerald-500: #10b981;
 
-  --header-height: 68px;
-  --tablet-min-width: 768px;
-  --desktop-min-width: 1024px;
+  --header-height: utils.pxToRem(68px);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -62,7 +62,7 @@ body {
 }
 
 body {
-  font-size: 16px;
+  font-size: utils.pxToRem(16px);
   color: var(--gray-600);
 }
 
@@ -71,7 +71,7 @@ input,
 select,
 textarea {
   font-family: inherit;
-  font-size: 16px;
+  font-size: utils.pxToRem(16px);
 }
 
 input,
