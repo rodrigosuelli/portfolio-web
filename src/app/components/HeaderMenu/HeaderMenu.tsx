@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import styles from './HeaderMenu.module.scss';
 
 export default function HeaderMenu() {
-  const { theme, handleSwitchTheme } = useTheme();
+  const { theme, handleToggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function HeaderMenu() {
             </button>
           ) : (
             <button
-              onClick={handleSwitchTheme}
+              onClick={handleToggleTheme}
               className={classNames(styles.btnBaixarCv)}
               type="button"
             >

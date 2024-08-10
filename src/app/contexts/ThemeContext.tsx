@@ -12,12 +12,12 @@ import { useMediaQuery, useLocalStorage } from 'usehooks-ts';
 
 type ThemeContextType = {
   theme: 'light' | 'dark';
-  handleSwitchTheme: () => void;
+  handleToggleTheme: () => void;
 };
 
 export const ThemeContext = createContext<ThemeContextType>({
   theme: 'light',
-  handleSwitchTheme: () => {},
+  handleToggleTheme: () => {},
 });
 
 export default function ThemeContextComp({
@@ -58,7 +58,7 @@ export default function ThemeContextComp({
     }
   }, [isDarkMode, localStorageTheme]);
 
-  const handleSwitchTheme: ThemeContextType['handleSwitchTheme'] =
+  const handleToggleTheme: ThemeContextType['handleToggleTheme'] =
     useCallback(() => {
       const newMode = theme === 'light' ? 'dark' : 'light';
       setLocalStorageTheme(newMode);
@@ -68,9 +68,9 @@ export default function ThemeContextComp({
   const contextValue = useMemo(
     () => ({
       theme,
-      handleSwitchTheme,
+      handleToggleTheme,
     }),
-    [theme, handleSwitchTheme]
+    [theme, handleToggleTheme]
   );
 
   return (
