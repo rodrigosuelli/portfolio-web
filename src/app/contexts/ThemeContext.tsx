@@ -46,15 +46,9 @@ export default function ThemeContextComp({
 
   useEffect(() => {
     if (localStorageTheme) {
-      if (localStorageTheme === 'dark') {
-        setTheme('dark');
-      } else {
-        setTheme('light');
-      }
-    } else if (isDarkMode) {
-      setTheme('dark');
+      setTheme(localStorageTheme === 'dark' ? 'dark' : 'light');
     } else {
-      setTheme('light');
+      setTheme(isDarkMode ? 'dark' : 'light');
     }
   }, [isDarkMode, localStorageTheme]);
 
