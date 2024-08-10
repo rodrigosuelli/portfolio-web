@@ -8,7 +8,7 @@ import React, {
   useMemo,
   useEffect,
 } from 'react';
-import { useMediaQuery } from 'usehooks-ts';
+import { useMediaQuery, useLocalStorage } from 'usehooks-ts';
 
 type ThemeContextType = {
   theme: 'light' | 'dark';
@@ -29,45 +29,41 @@ export default function ThemeContextComp({
     initializeWithValue: true,
   });
 
+  const [localStorageTheme, setLocalStorageTheme] = useLocalStorage<
+    string | undefined
+  >('theme', undefined, {
+    initializeWithValue: true,
+    deserializer: (value) => value,
+    serializer: (value) => value ?? '',
+  });
+
   const [theme, setTheme] = useState<ThemeContextType['theme']>(() => {
-    if (typeof window !== 'undefined') {
-      const localStorageTheme = window.localStorage.getItem('theme');
-      if (localStorageTheme) {
-        return localStorageTheme === 'dark' ? 'dark' : 'light';
-      }
+    if (localStorageTheme) {
+      return localStorageTheme === 'dark' ? 'dark' : 'light';
     }
     return isDarkMode ? 'dark' : 'light';
   });
 
   useEffect(() => {
-    const localStorageTheme = window.localStorage.getItem('theme');
-
-    // if (localStorageTheme) {
-    //   if (localStorageTheme === 'dark') {
-    //     setTheme('dark');
-    //   } else {
-    //     setTheme('light');
-    //   }
-    // } else if (isDarkMode) {
-    //   setTheme('dark');
-    // } else {
-    //   setTheme('light');
-    // }
-    if (!localStorageTheme) {
-      if (isDarkMode) {
+    if (localStorageTheme) {
+      if (localStorageTheme === 'dark') {
         setTheme('dark');
       } else {
         setTheme('light');
       }
+    } else if (isDarkMode) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
     }
-  }, [isDarkMode]);
+  }, [isDarkMode, localStorageTheme]);
 
   const handleSwitchTheme: ThemeContextType['handleSwitchTheme'] =
     useCallback(() => {
       const newMode = theme === 'light' ? 'dark' : 'light';
-      window.localStorage.setItem('theme', newMode);
+      setLocalStorageTheme(newMode);
       setTheme(newMode);
-    }, [theme]);
+    }, [setLocalStorageTheme, theme]);
 
   const contextValue = useMemo(
     () => ({
