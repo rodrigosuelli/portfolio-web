@@ -35,20 +35,19 @@ export default function ThemeContextComp({
     serializer: (value) => value ?? '',
   });
 
-  const [theme, setTheme] = useState<ThemeContextType['theme']>(() => {
+  const getInitialTheme = useCallback(() => {
     if (localStorageTheme) {
       return localStorageTheme === 'dark' ? 'dark' : 'light';
     }
     return isDarkMode ? 'dark' : 'light';
-  });
+  }, [isDarkMode, localStorageTheme]);
+
+  const [theme, setTheme] =
+    useState<ThemeContextType['theme']>(getInitialTheme());
 
   useEffect(() => {
-    if (localStorageTheme) {
-      setTheme(localStorageTheme === 'dark' ? 'dark' : 'light');
-    } else {
-      setTheme(isDarkMode ? 'dark' : 'light');
-    }
-  }, [isDarkMode, localStorageTheme]);
+    setTheme(getInitialTheme());
+  }, [getInitialTheme]);
 
   const handleToggleTheme: ThemeContextType['handleToggleTheme'] =
     useCallback(() => {
