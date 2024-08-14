@@ -2,13 +2,17 @@
 
 import Link from 'next/link';
 import classNames from 'classnames';
-import { useTheme } from '@/app/contexts/ThemeContext';
 import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 import styles from './HeaderMenu.module.scss';
 
 export default function HeaderMenu() {
-  const { theme, handleToggleTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+
+  function handleToggleTheme() {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  }
 
   useEffect(() => {
     setMounted(true);

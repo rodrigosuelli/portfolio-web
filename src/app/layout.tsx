@@ -22,7 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    // next-themes lib need `suppressHydrationWarning` to work
+    <html suppressHydrationWarning lang="pt-BR">
       <body className={classNames(inter.className)}>
         <Providers>
           <HeaderMenu />
