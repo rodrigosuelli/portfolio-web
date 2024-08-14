@@ -30,8 +30,8 @@ export default function ThemeContextComp({
   });
 
   const [localStorageTheme, setLocalStorageTheme] = useLocalStorage<
-    string | undefined
-  >('theme', undefined, {
+    string | null
+  >('theme', null, {
     initializeWithValue: true,
     deserializer: (value) => value,
     serializer: (value) => value ?? '',
