@@ -19,7 +19,7 @@ export default function HeaderMenu() {
   }, []);
 
   return (
-    <header className={classNames([styles.headerMenu])}>
+    <header className={classNames(styles.headerMenu)}>
       <Link className={classNames(styles.logo)} href="/">
         {'<RS />'}
       </Link>
