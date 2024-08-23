@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { forwardRef } from 'react';
 import styles from './Typography.module.scss';
 
 type TypographyVariantsType = Record<
@@ -33,16 +34,20 @@ type TypographyCompProps = {
   children: React.ReactNode;
 } & React.HTMLAttributes<HTMLHeadingElement | HTMLParagraphElement>;
 
-export default function Typography({
-  variant,
-  children,
-  ...props
-}: TypographyCompProps) {
-  const { classes, element: Element } = typographyVariants[variant];
+type RefType = HTMLHeadingElement | HTMLParagraphElement;
 
-  return (
-    <Element className={classes} {...props}>
-      {children}
-    </Element>
-  );
-}
+const Typography = forwardRef<RefType, TypographyCompProps>(
+  // eslint-disable-next-line prefer-arrow-callback
+  function Typography(props, ref) {
+    const { variant, children, ...otherProps } = props;
+    const { classes, element: Element } = typographyVariants[variant];
+
+    return (
+      <Element ref={ref} className={classes} {...otherProps}>
+        {children}
+      </Element>
+    );
+  }
+);
+
+export default Typography;
