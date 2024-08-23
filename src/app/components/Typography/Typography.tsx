@@ -1,13 +1,6 @@
 import classNames from 'classnames';
 import styles from './Typography.module.scss';
 
-const overwriteFontStylesOptions = {
-  bold: classNames(styles.bold),
-  semiBold: classNames(styles.semiBold),
-  medium: classNames(styles.medium),
-  underline: classNames(styles.underline),
-};
-
 type TypographyVariantsType = Record<
   string,
   {
@@ -35,13 +28,21 @@ const typographyVariants = {
   body3: { classes: classNames(styles.body3), element: 'p' },
 } satisfies TypographyVariantsType;
 
-type TypographyProps = {
+type TypographyCompProps = {
   variant: keyof typeof typographyVariants;
   children: React.ReactNode;
-};
+} & React.HTMLAttributes<HTMLHeadingElement | HTMLParagraphElement>;
 
-export default function Typography({ variant, children }: TypographyProps) {
+export default function Typography({
+  variant,
+  children,
+  ...props
+}: TypographyCompProps) {
   const { classes, element: Element } = typographyVariants[variant];
 
-  return <Element className={classes}>{children}</Element>;
+  return (
+    <Element className={classes} {...props}>
+      {children}
+    </Element>
+  );
 }
