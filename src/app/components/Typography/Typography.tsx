@@ -27,7 +27,7 @@ const typographyVariants = {
   body1: { classes: classNames(styles.body1), element: 'p' },
   body2: { classes: classNames(styles.body2), element: 'p' },
   body3: { classes: classNames(styles.body3), element: 'p' },
-} satisfies TypographyVariantsType;
+} as const satisfies TypographyVariantsType;
 
 type TypographyCompProps = {
   variant: keyof typeof typographyVariants;
