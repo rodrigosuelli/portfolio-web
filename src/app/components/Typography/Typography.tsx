@@ -39,11 +39,20 @@ type RefType = HTMLHeadingElement | HTMLParagraphElement;
 const Typography = forwardRef<RefType, TypographyCompProps>(
   // eslint-disable-next-line prefer-arrow-callback
   function Typography(props, ref) {
-    const { variant, children, ...otherProps } = props;
+    const {
+      variant,
+      children,
+      className: propsClassNames = '',
+      ...otherProps
+    } = props;
     const { classes, element: Element } = typographyVariants[variant];
 
     return (
-      <Element ref={ref} className={classes} {...otherProps}>
+      <Element
+        ref={ref}
+        className={classNames(classes, propsClassNames)}
+        {...otherProps}
+      >
         {children}
       </Element>
     );
