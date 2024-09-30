@@ -1,0 +1,74 @@
+@use '../../sass/utils' as utils;
+@use '../../sass/variables' as variables;
+
+.heading1 {
+  font-size: utils.pxToRem(36px);
+  line-height: utils.pxToRem(40px);
+  font-weight: 600; // semi-bold
+
+  @media only screen and (min-width: variables.$tablet-min-width) {
+    font-size: utils.pxToRem(48px);
+    line-height: utils.pxToRem(48px);
+    letter-spacing: -0.02em;
+    font-weight: 700; // semi-bold
+  }
+
+  @media only screen and (min-width: variables.$desktop-min-width) {
+    font-size: utils.pxToRem(68px);
+    line-height: utils.pxToRem(72px);
+  }
+}
+
+.heading2 {
+  font-size: utils.pxToRem(18px);
+  line-height: utils.pxToRem(28px);
+  letter-spacing: -0.02em;
+  font-weight: 600; // semi-bold
+
+  @media only screen and (min-width: variables.$desktop-min-width) {
+    font-size: utils.pxToRem(36px);
+    line-height: utils.pxToRem(40px);
+  }
+}
+
+.heading3 {
+  font-size: utils.pxToRem(24px);
+  line-height: utils.pxToRem(32px);
+  letter-spacing: -0.02em;
+  font-weight: 600; // semi-bold
+
+  @media only screen and (min-width: variables.$desktop-min-width) {
+    font-size: utils.pxToRem(30px);
+    line-height: utils.pxToRem(36px);
+  }
+}
+
+.subtitle {
+  font-size: utils.pxToRem(18px);
+  line-height: utils.pxToRem(28px);
+
+  @media only screen and (min-width: variables.$desktop-min-width) {
+    font-size: utils.pxToRem(20px);
+    line-height: utils.pxToRem(28px);
+  }
+}
+
+.body1 {
+  font-size: utils.pxToRem(16px);
+  line-height: utils.pxToRem(24px);
+
+  @media only screen and (min-width: variables.$desktop-min-width) {
+    font-size: utils.pxToRem(18px);
+    line-height: utils.pxToRem(28px);
+  }
+}
+
+.body2 {
+  font-size: utils.pxToRem(16px);
+  line-height: utils.pxToRem(24px);
+}
+
+.body3 {
+  font-size: utils.pxToRem(14px);
+  line-height: utils.pxToRem(20px);
+}
