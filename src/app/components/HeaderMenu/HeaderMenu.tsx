@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import styles from './HeaderMenu.module.scss';
+import Typography from '../Typography/Typography';
 
 export default function HeaderMenu() {
   const { theme, setTheme } = useTheme();
@@ -21,7 +22,9 @@ export default function HeaderMenu() {
   return (
     <header className={classNames(styles.headerMenu)}>
       <Link className={classNames(styles.logo)} href="/">
-        {'<RS />'}
+        <Typography style={{ fontWeight: 700 }} variant="heading3">
+          {'<RS />'}
+        </Typography>
       </Link>
       <button className={classNames(styles.hamburguerBtn)} type="button">
         Hamburguer
