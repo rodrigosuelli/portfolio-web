@@ -4,6 +4,7 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
+import { Menu } from 'lucide-react';
 import styles from './HeaderMenu.module.scss';
 import Typography from '../Typography/Typography';
 
@@ -27,8 +28,9 @@ export default function HeaderMenu() {
         </Typography>
       </Link>
       <button className={classNames(styles.hamburguerBtn)} type="button">
-        Hamburguer
+        <Menu />
       </button>
+
       <div className={classNames(styles.navContainer)}>
         <nav className={classNames(styles.headerLinks)}>
           <Link href="#Sobre">Sobre</Link>

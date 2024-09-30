@@ -17,6 +17,13 @@
 
 .hamburguerBtn {
   display: initial;
+  background: none;
+  color: unset;
+
+  svg {
+    width: utils.pxToRem(24px);
+    height: utils.pxToRem(24px);
+  }
 }
 
 .navContainer {
