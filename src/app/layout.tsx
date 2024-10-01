@@ -10,10 +10,6 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Rodrigo Suélli | Desenvolvedor Full Stack.',
   description: 'Desenvolvedor Full Stack (React, Nodejs)',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
 };
 
 export const viewport: Viewport = {
