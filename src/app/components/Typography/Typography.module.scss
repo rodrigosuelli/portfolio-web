@@ -1,6 +1,12 @@
 @use '../../sass/utils' as utils;
 @use '../../sass/variables' as variables;
 
+.heading1,
+.heading2,
+.heading3 {
+  color: var(--gray-900);
+}
+
 .heading1 {
   font-size: utils.pxToRem(36px);
   line-height: utils.pxToRem(40px);

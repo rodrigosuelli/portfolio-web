@@ -16,9 +16,12 @@
 }
 
 .hamburguerBtn {
-  display: initial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
   color: unset;
+  padding: 6px;
 
   svg {
     width: utils.pxToRem(24px);
