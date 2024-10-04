@@ -23,6 +23,7 @@
     // ],
     "no-console": "warn",
     "no-use-before-define": "error",
+    "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
     "capitalized-comments": "off",
     "camelcase": "off",
     "no-await-in-loop": "off",
