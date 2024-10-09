@@ -7,26 +7,14 @@
   justify-content: space-between;
   align-items: center;
   gap: utils.pxToRem(10px);
-  height: utils.pxToRem(68px);
+  padding: utils.pxToRem(16px);
+  background-color: var(--gray-default);
+  border-bottom: 1px solid var(--gray-100);
 }
 
 .logo {
   width: fit-content;
   text-wrap: nowrap;
-}
-
-.hamburguerBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: none;
-  color: unset;
-  padding: 6px;
-
-  svg {
-    width: utils.pxToRem(24px);
-    height: utils.pxToRem(24px);
-  }
 }
 
 .navContainer {

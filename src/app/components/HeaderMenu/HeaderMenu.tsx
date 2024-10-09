@@ -5,8 +5,15 @@ import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { Menu } from 'lucide-react';
-import styles from './HeaderMenu.module.scss';
 import Typography from '../Typography/Typography';
+import IconButton from '../IconButton/IconButton';
+
+/**
+ * Import CSS files in the correct order:
+ * The last imported file has higher specificity and will override previous styles.
+ * Ensure styles that need to take precedence are imported last.
+ */
+import styles from './HeaderMenu.module.scss';
 
 export default function HeaderMenu() {
   const { theme, setTheme } = useTheme();
@@ -27,9 +34,9 @@ export default function HeaderMenu() {
           {'<RS />'}
         </Typography>
       </Link>
-      <button className={classNames(styles.hamburguerBtn)} type="button">
+      <IconButton className={classNames(styles.hamburguerBtn)} size="md">
         <Menu />
-      </button>
+      </IconButton>
 
       <div className={classNames(styles.navContainer)}>
         <nav className={classNames(styles.headerLinks)}>

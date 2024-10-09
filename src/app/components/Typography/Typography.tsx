@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { forwardRef } from 'react';
+
 import styles from './Typography.module.scss';
 
 type TypographyVariantsType = Record<

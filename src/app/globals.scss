@@ -83,16 +83,8 @@ button {
 
 button {
   cursor: pointer;
-  background: var(--gray-900);
+  background: transparent;
   color: var(--gray-50);
-}
-
-button:hover {
-  background: var(--gray-700);
-}
-
-button:active {
-  background: var(--gray-800);
 }
 
 button:disabled {
