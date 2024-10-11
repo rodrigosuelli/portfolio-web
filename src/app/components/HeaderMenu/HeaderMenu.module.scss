@@ -2,7 +2,6 @@
 @use '../../sass/variables' as variables;
 
 .headerMenu {
-  padding: 0 utils.pxToRem(16px);
   display: flex;
   justify-content: space-between;
   align-items: center;
