@@ -7,6 +7,7 @@
 
   font-weight: 500;
   color: var(--gray-50);
+  line-height: utils.pxToRem(24px);
 
   background: var(--gray-900);
   border-radius: utils.pxToRem(12px);
