@@ -16,6 +16,9 @@ import Button from '../Button/Button';
  */
 import styles from './HeaderMenu.module.scss';
 
+const CVLink =
+  'https://drive.google.com/file/d/1RSKvhmEOuj1tvPEjeYzjpaZtiiMW2pCm/view?usp=drive_link';
+
 export default function HeaderMenu() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -76,7 +79,7 @@ export default function HeaderMenu() {
               </IconButton>
             )}
             <Button asChild={true}>
-              <Link href="#" target="_blank">
+              <Link href={CVLink} target="_blank">
                 Baixar CV
               </Link>
             </Button>
