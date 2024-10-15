@@ -57,6 +57,10 @@
 }
 
 @media only screen and (min-width: variables.$tablet-min-width) {
+  .navContainer {
+    padding: utils.pxToRem(16px) utils.pxToRem(32px);
+  }
+
   .rightContainer {
     display: flex;
     gap: utils.pxToRem(24px);

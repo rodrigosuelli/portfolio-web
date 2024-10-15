@@ -22,7 +22,7 @@ type VariantProps<T> = {
   [K in keyof T]?: keyof T[K];
 };
 
-export type IconButtonProps = {
+type IconButtonProps = {
   showTooltip?: boolean;
   tooltipText?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &

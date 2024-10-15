@@ -7,6 +7,7 @@ import { useTheme } from 'next-themes';
 import { MenuIcon, MoonStarIcon, SunIcon } from 'lucide-react';
 import Typography from '../Typography/Typography';
 import IconButton from '../IconButton/IconButton';
+import Button from '../Button/Button';
 
 /**
  * Import CSS files in the correct order:
@@ -74,9 +75,11 @@ export default function HeaderMenu() {
                 {theme === 'dark' ? <SunIcon /> : <MoonStarIcon />}
               </IconButton>
             )}
-            <button className={classNames(styles.btnBaixarCv)} type="button">
-              Baixar CV
-            </button>
+            <Button asChild={true}>
+              <Link href="#" target="_blank">
+                Baixar CV
+              </Link>
+            </Button>
           </div>
         </div>
       </nav>
