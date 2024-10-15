@@ -4,7 +4,7 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
-import { Menu } from 'lucide-react';
+import { MenuIcon, MoonStarIcon, SunIcon } from 'lucide-react';
 import Typography from '../Typography/Typography';
 import IconButton from '../IconButton/IconButton';
 
@@ -16,8 +16,8 @@ import IconButton from '../IconButton/IconButton';
 import styles from './HeaderMenu.module.scss';
 
 export default function HeaderMenu() {
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   function handleToggleTheme() {
     setTheme(theme === 'light' ? 'dark' : 'light');
@@ -36,7 +36,7 @@ export default function HeaderMenu() {
           </Typography>
         </Link>
         <IconButton className={classNames(styles.hamburguerBtn)} size="md">
-          <Menu />
+          <MenuIcon />
         </IconButton>
 
         <div className={classNames(styles.rightContainer)}>
@@ -57,17 +57,22 @@ export default function HeaderMenu() {
           <div className={classNames(styles.divider)}></div>
           <div className={classNames(styles.headerButtons)}>
             {!mounted ? (
-              <button className={classNames(styles.btnBaixarCv)} type="button">
-                Light Mode
-              </button>
+              <IconButton
+                size="md"
+                className={classNames(styles.btnBaixarCv)}
+                type="button"
+              >
+                <MoonStarIcon />
+              </IconButton>
             ) : (
-              <button
+              <IconButton
+                size="md"
                 onClick={handleToggleTheme}
                 className={classNames(styles.btnBaixarCv)}
                 type="button"
               >
-                {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}
-              </button>
+                {theme === 'dark' ? <SunIcon /> : <MoonStarIcon />}
+              </IconButton>
             )}
             <button className={classNames(styles.btnBaixarCv)} type="button">
               Baixar CV
