@@ -43,7 +43,7 @@
   letter-spacing: -0.02em;
   font-weight: 600; // semi-bold
 
-  @media only screen and (min-width: variables.$desktop-min-width) {
+  @media only screen and (min-width: variables.$tablet-min-width) {
     font-size: utils.pxToRem(30px);
     line-height: utils.pxToRem(36px);
   }

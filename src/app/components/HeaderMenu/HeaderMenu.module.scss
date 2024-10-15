@@ -2,13 +2,19 @@
 @use '../../sass/variables' as variables;
 
 .headerMenu {
+  height: 69px;
+  background-color: var(--gray-default);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.navContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: utils.pxToRem(10px);
   padding: utils.pxToRem(16px);
-  background-color: var(--gray-default);
-  border-bottom: 1px solid var(--gray-100);
+  max-width: utils.pxToRem(1280px);
+  margin: 0 auto;
 }
 
 .logo {
@@ -16,12 +22,26 @@
   text-wrap: nowrap;
 }
 
-.navContainer {
+.rightContainer {
   display: none;
 }
 
 .headerLinks {
   display: none;
+
+  .link {
+    color: var(--gray-600);
+    font-weight: 500;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      color: var(--gray-900);
+    }
+
+    &:active {
+      color: var(--gray-600);
+    }
+  }
 }
 
 .divider {
@@ -37,7 +57,7 @@
 }
 
 @media only screen and (min-width: variables.$tablet-min-width) {
-  .navContainer {
+  .rightContainer {
     display: flex;
     gap: utils.pxToRem(24px);
     align-items: center;

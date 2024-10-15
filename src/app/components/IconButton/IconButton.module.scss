@@ -1,11 +1,13 @@
+@use '../../sass/utils' as utils;
+
 .iconButton {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border-radius: 0.5rem;
+  border-radius: utils.pxToRem(8px);
   position: relative;
-  padding: 0.375rem;
+  padding: utils.pxToRem(6px);
   transition:
     color,
     background-color,
@@ -33,14 +35,14 @@
 
 .iconButton.md {
   svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: utils.pxToRem(24px);
+    height: utils.pxToRem(24px);
   }
 }
 
 .iconButton.lg {
   svg {
-    width: 2rem;
-    height: 2rem;
+    width: utils.pxToRem(32px);
+    height: utils.pxToRem(32px);
   }
 }

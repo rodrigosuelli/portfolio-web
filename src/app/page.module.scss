@@ -1,8 +1,10 @@
+@use '../app/sass/utils' as utils;
+
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: utils.pxToRem(96px);
   min-height: calc(100vh - var(--header-height));
 }
