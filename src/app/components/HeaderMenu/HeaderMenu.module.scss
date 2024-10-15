@@ -45,7 +45,7 @@
 }
 
 .divider {
-  width: 2px;
+  width: utils.pxToRem(2px);
   height: utils.pxToRem(24px);
   background: var(--gray-100);
 }
