@@ -1,14 +1,14 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { forwardRef } from 'react';
 
 import styles from './IconButton.module.scss';
 
 const iconButtonVariants = {
-  defaultClassNames: classNames(styles.iconButton),
+  defaultClassNames: clsx(styles.iconButton),
   variants: {
     size: {
-      md: classNames(styles.md),
-      lg: classNames(styles.lg),
+      md: clsx(styles.md),
+      lg: clsx(styles.lg),
     },
   },
   defaultVariants: {
@@ -42,7 +42,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     return (
       <button
         type="button"
-        className={classNames(
+        className={clsx(
           iconButtonVariants.defaultClassNames,
           iconButtonVariants.variants.size[size],
           propsClassNames
@@ -52,7 +52,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
       >
         {children}
         {showTooltip && tooltipText.length > 0 && (
-          <span className={classNames(styles.tooltip)}>{tooltipText}</span>
+          <span className={clsx(styles.tooltip)}>{tooltipText}</span>
         )}
       </button>
     );

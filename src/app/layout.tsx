@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.scss';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import HeaderMenu from './components/HeaderMenu/HeaderMenu';
 import Providers from './providers';
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     // next-themes lib need `suppressHydrationWarning` to work
     <html suppressHydrationWarning lang="pt-BR">
-      <body className={classNames(inter.className)}>
+      <body className={clsx(inter.className)}>
         <Providers>
           <HeaderMenu />
           {children}

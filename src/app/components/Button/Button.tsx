@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { forwardRef } from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
@@ -19,7 +19,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <Comp
-        className={classNames(styles.button, propsClassNames)}
+        className={clsx(styles.button, propsClassNames)}
         ref={ref}
         {...otherProps}
       />

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useState } from 'react';
 import { MenuIcon, XIcon } from 'lucide-react';
 import * as DrawerPrimitive from '@radix-ui/react-dialog';
@@ -33,29 +33,29 @@ export default function HeaderMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className={classNames(styles.headerMenu)}>
-      <nav className={classNames(styles.navContainer)}>
-        <Link className={classNames(styles.logo)} href="/">
+    <header className={clsx(styles.headerMenu)}>
+      <nav className={clsx(styles.navContainer)}>
+        <Link className={clsx(styles.logo)} href="/">
           <Logo />
         </Link>
 
-        <div className={classNames(styles.rightContainer)}>
-          <div className={classNames(styles.headerLinks)}>
-            <Link className={classNames(styles.link)} href="#Sobre">
+        <div className={clsx(styles.rightContainer)}>
+          <div className={clsx(styles.headerLinks)}>
+            <Link className={clsx(styles.link)} href="#Sobre">
               Sobre
             </Link>
-            <Link className={classNames(styles.link)} href="#Habilidades">
+            <Link className={clsx(styles.link)} href="#Habilidades">
               Habilidades
             </Link>
-            <Link className={classNames(styles.link)} href="#Experiência">
+            <Link className={clsx(styles.link)} href="#Experiência">
               Experiência
             </Link>
-            <Link className={classNames(styles.link)} href="#Contato">
+            <Link className={clsx(styles.link)} href="#Contato">
               Contato
             </Link>
           </div>
-          <div className={classNames(styles.divider)}></div>
-          <div className={classNames(styles.headerButtons)}>
+          <div className={clsx(styles.divider)}></div>
+          <div className={clsx(styles.headerButtons)}>
             <ThemeSwitcher />
             <Button asChild={true}>
               <Link href={CVLink} target="_blank">
@@ -68,24 +68,22 @@ export default function HeaderMenu() {
         <DrawerPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
           <DrawerPrimitive.Trigger
             asChild
-            className={classNames(styles.hamburguerBtn)}
+            className={clsx(styles.hamburguerBtn)}
           >
             <IconButton size="md">
               <MenuIcon />
             </IconButton>
           </DrawerPrimitive.Trigger>
           <DrawerPrimitive.Portal>
-            <DrawerPrimitive.Overlay
-              className={classNames(styles.sidebarOverlay)}
-            />
-            <DrawerPrimitive.Content className={classNames(styles.sidebar)}>
+            <DrawerPrimitive.Overlay className={clsx(styles.sidebarOverlay)} />
+            <DrawerPrimitive.Content className={clsx(styles.sidebar)}>
               <VisuallyHidden.Root>
                 <DrawerPrimitive.Title>Menu Lateral</DrawerPrimitive.Title>
                 <DrawerPrimitive.Description>
                   Menu De Navegação Lateral
                 </DrawerPrimitive.Description>
               </VisuallyHidden.Root>
-              <div className={classNames(styles.sidebarSecBrand)}>
+              <div className={clsx(styles.sidebarSecBrand)}>
                 <Logo />
                 <DrawerPrimitive.Close asChild>
                   <IconButton>
@@ -93,22 +91,22 @@ export default function HeaderMenu() {
                   </IconButton>
                 </DrawerPrimitive.Close>
               </div>
-              <div className={classNames(styles.sidebarSecLinks)}>
-                <Link className={classNames(styles.link)} href="#Sobre">
+              <div className={clsx(styles.sidebarSecLinks)}>
+                <Link className={clsx(styles.link)} href="#Sobre">
                   Sobre
                 </Link>
-                <Link className={classNames(styles.link)} href="#Habilidades">
+                <Link className={clsx(styles.link)} href="#Habilidades">
                   Habilidades
                 </Link>
-                <Link className={classNames(styles.link)} href="#Experiência">
+                <Link className={clsx(styles.link)} href="#Experiência">
                   Experiência
                 </Link>
-                <Link className={classNames(styles.link)} href="#Contato">
+                <Link className={clsx(styles.link)} href="#Contato">
                   Contato
                 </Link>
               </div>
-              <div className={classNames(styles.sidebarSecTheme)}>
-                <div className={classNames(styles.switchThemeRow)}>
+              <div className={clsx(styles.sidebarSecTheme)}>
+                <div className={clsx(styles.switchThemeRow)}>
                   <Typography variant="body2">Trocar Tema</Typography>
                   <ThemeSwitcher />
                 </div>

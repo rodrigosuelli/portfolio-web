@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { forwardRef } from 'react';
 
 import styles from './Typography.module.scss';
@@ -13,21 +13,21 @@ type TypographyVariantsType = Record<
 
 const typographyVariants = {
   heading1: {
-    classes: classNames(styles.heading1),
+    classes: clsx(styles.heading1),
     element: 'h1',
   },
   heading2: {
-    classes: classNames(styles.heading2),
+    classes: clsx(styles.heading2),
     element: 'h2',
   },
   heading3: {
-    classes: classNames(styles.heading3),
+    classes: clsx(styles.heading3),
     element: 'h3',
   },
-  subtitle: { classes: classNames(styles.subtitle), element: 'p' },
-  body1: { classes: classNames(styles.body1), element: 'p' },
-  body2: { classes: classNames(styles.body2), element: 'p' },
-  body3: { classes: classNames(styles.body3), element: 'p' },
+  subtitle: { classes: clsx(styles.subtitle), element: 'p' },
+  body1: { classes: clsx(styles.body1), element: 'p' },
+  body2: { classes: clsx(styles.body2), element: 'p' },
+  body3: { classes: clsx(styles.body3), element: 'p' },
 } as const satisfies TypographyVariantsType;
 
 type TypographyCompProps = {
@@ -50,7 +50,7 @@ const Typography = forwardRef<RefType, TypographyCompProps>(
     return (
       <Element
         ref={ref}
-        className={classNames(classes, propsClassNames)}
+        className={clsx(classes, propsClassNames)}
         {...otherProps}
       >
         {children}
