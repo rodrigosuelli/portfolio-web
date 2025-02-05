@@ -31,18 +31,33 @@
   &:active {
     background: var(--gray-200);
   }
-}
 
-.iconButton.md {
-  svg {
-    width: utils.pxToRem(24px);
-    height: utils.pxToRem(24px);
+  &.md {
+    svg {
+      width: utils.pxToRem(24px);
+      height: utils.pxToRem(24px);
+    }
   }
-}
 
-.iconButton.lg {
-  svg {
-    width: utils.pxToRem(32px);
-    height: utils.pxToRem(32px);
+  &.lg {
+    svg {
+      width: utils.pxToRem(32px);
+      height: utils.pxToRem(32px);
+    }
+  }
+
+  .tooltip {
+    position: absolute;
+    top: utils.pxToRem(-32px);
+    border-radius: utils.pxToRem(8px);
+    background: var(--gray-200);
+    font-size: utils.pxToRem(14px);
+    line-height: utils.pxToRem(20px);
+    padding: {
+      top: utils.pxToRem(4px);
+      bottom: utils.pxToRem(4px);
+      right: utils.pxToRem(8px);
+      left: utils.pxToRem(8px);
+    }
   }
 }

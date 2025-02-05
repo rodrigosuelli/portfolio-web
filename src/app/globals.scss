@@ -76,7 +76,7 @@ textarea {
 button {
   cursor: pointer;
   background: transparent;
-  color: var(--gray-50);
+  color: inherit;
 }
 
 button:disabled {

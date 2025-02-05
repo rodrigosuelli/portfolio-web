@@ -52,9 +52,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
       >
         {children}
         {showTooltip && tooltipText.length > 0 && (
-          <span className="absolute -top-8 rounded-lg bg-gray-200 px-2 py-1 text-sm">
-            {tooltipText}
-          </span>
+          <span className={classNames(styles.tooltip)}>{tooltipText}</span>
         )}
       </button>
     );
