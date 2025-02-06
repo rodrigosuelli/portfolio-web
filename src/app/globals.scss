@@ -27,7 +27,7 @@
   --gray-950: #030712;
   --emerald-500: #10b981;
 
-  --header-height: utils.pxToRem(68px);
+  --header-height: #{utils.pxToRem(69px)};
 }
 
 [data-theme='dark'] {
