@@ -2,6 +2,7 @@
   "name": "portfolio-web",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -34,6 +35,8 @@
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.3.3",
     "sass": "^1.77.8",
+    "stylelint": "^16.14.1",
+    "stylelint-config-standard-scss": "^14.0.0",
     "typescript": "^5.5.3"
   }
 }
