@@ -9,6 +9,7 @@ import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import Typography from '../Typography/Typography';
 import IconButton from '../IconButton/IconButton';
 import Button from '../Button/Button';
+import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
 
 /**
  * Import CSS files in the correct order:
@@ -16,7 +17,6 @@ import Button from '../Button/Button';
  * Ensure styles that need to take precedence are imported last.
  */
 import styles from './HeaderMenu.module.scss';
-import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
 
 const CVLink =
   'https://drive.google.com/file/d/1RSKvhmEOuj1tvPEjeYzjpaZtiiMW2pCm/view?usp=drive_link';
