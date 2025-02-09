@@ -16,6 +16,13 @@
     left: 16px;
     right: 16px;
   }
+
+  @media only screen and (min-width: variables.$tablet-min-width) {
+    padding: {
+      top: utils.pxToRem(80px);
+      bottom: utils.pxToRem(80px);
+    }
+  }
 }
 
 .section:nth-of-type(odd) {
@@ -24,13 +31,4 @@
 
 .section:nth-of-type(even) {
   background-color: var(--gray-50);
-}
-
-@media only screen and (min-width: variables.$tablet-min-width) {
-  .section {
-    padding: {
-      top: utils.pxToRem(80px);
-      bottom: utils.pxToRem(80px);
-    }
-  }
 }

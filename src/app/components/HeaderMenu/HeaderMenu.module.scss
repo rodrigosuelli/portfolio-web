@@ -19,6 +19,13 @@
   }
   max-width: utils.pxToRem(1280px);
   margin: 0 auto;
+
+  @media only screen and (min-width: variables.$tablet-min-width) {
+    padding: {
+      left: utils.pxToRem(32px);
+      right: utils.pxToRem(32px);
+    }
+  }
 }
 
 .logo {
@@ -28,10 +35,22 @@
 
 .rightContainer {
   display: none;
+
+  @media only screen and (min-width: variables.$tablet-min-width) {
+    display: flex;
+    gap: utils.pxToRem(24px);
+    align-items: center;
+  }
 }
 
 .headerLinks {
   display: none;
+
+  @media only screen and (min-width: variables.$tablet-min-width) {
+    display: flex;
+    gap: utils.pxToRem(24px);
+    align-items: center;
+  }
 }
 
 .link {
@@ -59,6 +78,12 @@
   display: flex;
   gap: utils.pxToRem(16px);
   align-items: center;
+}
+
+.hamburguerBtn {
+  @media only screen and (min-width: variables.$tablet-min-width) {
+    display: none;
+  }
 }
 
 .sidebarOverlay {
@@ -146,29 +171,4 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-@media only screen and (min-width: variables.$tablet-min-width) {
-  .navContainer {
-    padding: {
-      left: utils.pxToRem(32px);
-      right: utils.pxToRem(32px);
-    }
-  }
-
-  .rightContainer {
-    display: flex;
-    gap: utils.pxToRem(24px);
-    align-items: center;
-  }
-
-  .headerLinks {
-    display: flex;
-    gap: utils.pxToRem(24px);
-    align-items: center;
-  }
-
-  .hamburguerBtn {
-    display: none;
-  }
 }
