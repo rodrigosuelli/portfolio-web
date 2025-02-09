@@ -1,0 +1,5 @@
+{
+  // Use workspace TypeScript version
+  // Required for the TypeScript plugin typescript-plugin-css-modules to work
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
