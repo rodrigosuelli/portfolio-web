@@ -2,5 +2,6 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "stylelint.validate": ["css", "scss"]
+  "stylelint.snippet": ["css", "less", "postcss", "scss"],
+  "stylelint.validate": ["css", "less", "postcss", "scss"]
 }
