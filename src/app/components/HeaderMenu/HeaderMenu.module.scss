@@ -5,6 +5,10 @@
   height: var(--header-height);
   background-color: var(--gray-default);
   border-bottom: 1px solid var(--gray-100);
+
+  @media only screen and (min-width: variables.$tablet-min-width) {
+    border-bottom: 1px solid transparent;
+  }
 }
 
 .navContainer {

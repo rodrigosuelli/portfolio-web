@@ -20,7 +20,7 @@
   }
 
   @media only screen and (min-width: variables.$desktop-min-width) {
-    font-size: utils.pxToRem(68px);
+    font-size: utils.pxToRem(60px);
     line-height: utils.pxToRem(72px);
   }
 }
