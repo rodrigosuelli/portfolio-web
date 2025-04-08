@@ -1,4 +1,5 @@
 @use './_utils.scss' as utils;
 
+$mobile-min-width: utils.pxToEm(360px);
 $tablet-min-width: utils.pxToEm(768px);
 $desktop-min-width: utils.pxToEm(1024px);

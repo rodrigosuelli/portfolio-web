@@ -25,6 +25,7 @@
   --gray-900: #111827;
   --gray-900-rgb: 17 24 39;
   --gray-950: #030712;
+  --emerald-400: #34d399;
   --emerald-500: #10b981;
 
   --header-height: #{utils.pxToRem(69px)};
@@ -60,6 +61,7 @@ body {
 body {
   font-size: utils.pxToRem(16px);
   color: var(--gray-600);
+  background-color: var(--gray-default);
 }
 
 button,

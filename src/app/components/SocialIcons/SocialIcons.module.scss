@@ -1,0 +1,7 @@
+@use '../../sass/utils' as utils;
+
+.socialIcons {
+  display: flex;
+  gap: utils.pxToRem(4px);
+  align-items: center;
+}

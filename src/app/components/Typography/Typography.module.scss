@@ -11,6 +11,7 @@
   font-size: utils.pxToRem(36px);
   line-height: utils.pxToRem(40px);
   font-weight: 600; // semi-bold
+  letter-spacing: -0.03em;
 
   @media only screen and (min-width: variables.$tablet-min-width) {
     font-size: utils.pxToRem(48px);
