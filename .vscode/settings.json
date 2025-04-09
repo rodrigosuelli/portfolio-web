@@ -24,5 +24,12 @@
     "*.module.styl"
   ],
   "reactTsScss.references": true,
-  "reactTsScss.codelens": false
+  "reactTsScss.codelens": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.removeUnusedImports": "explicit",
+    "source.sortImports": "explicit",
+    "source.organizeImports": "explicit",
+    "source.organizeLinkDefinitions": "explicit"
+  }
 }

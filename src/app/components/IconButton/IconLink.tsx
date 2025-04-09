@@ -1,15 +1,17 @@
 import clsx from 'clsx';
+import Link, { LinkProps } from 'next/link';
 import { forwardRef } from 'react';
 import { iconButtonVariants } from './icon-button-variants.constant';
 import { IconButtonBaseProps } from './types/IconButtonBaseProps';
 
 import styles from './IconButton.module.scss';
 
-type IconButtonProps = IconButtonBaseProps &
-  React.ButtonHTMLAttributes<HTMLButtonElement>;
+type IconLinkProps = IconButtonBaseProps &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> &
+  LinkProps;
 
-const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
-  function IconButton(props, ref) {
+const IconLink = forwardRef<HTMLAnchorElement, IconLinkProps>(
+  function IconLink(props, ref) {
     const {
       size = iconButtonVariants.defaultVariants.size,
       showTooltip = false,
@@ -20,8 +22,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     } = props;
 
     return (
-      <button
-        type="button"
+      <Link
         className={clsx(
           iconButtonVariants.defaultClassNames,
           iconButtonVariants.variants.size[size],
@@ -34,9 +35,9 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
         {showTooltip && tooltipText.length > 0 && (
           <span className={clsx(styles.tooltip)}>{tooltipText}</span>
         )}
-      </button>
+      </Link>
     );
   }
 );
 
-export default IconButton;
+export default IconLink;

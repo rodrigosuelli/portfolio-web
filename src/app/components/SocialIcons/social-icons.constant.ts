@@ -1,6 +1,6 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
 
-const SOCIAL_LINKS = [
+export const SOCIAL_LINKS = [
   {
     icon: Github,
     url: 'https://github.com/rodrigosuelli',
@@ -14,5 +14,3 @@ const SOCIAL_LINKS = [
     url: 'mailto:rodrigosuelli@gmail.com',
   },
 ];
-
-export default SOCIAL_LINKS;
