@@ -1,10 +1,10 @@
 'use client';
 
 import clsx from 'clsx';
+import IconLink from '../IconButton/IconLink';
+import { SOCIAL_LINKS } from './social-icons.constant';
 
 import styles from './SocialIcons.module.scss';
-import { SOCIAL_LINKS } from './social-icons.constant';
-import IconLink from '../IconButton/IconLink';
 
 export default function SocialIcons() {
   return (

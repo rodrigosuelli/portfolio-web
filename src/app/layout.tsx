@@ -1,9 +1,9 @@
+import clsx from 'clsx';
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.scss';
-import clsx from 'clsx';
-import HeaderMenu from './components/HeaderMenu/HeaderMenu';
 import Providers from './providers';
+
+import './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,10 +28,7 @@ export default function RootLayout({
     // next-themes lib need `suppressHydrationWarning` to work
     <html suppressHydrationWarning lang="pt-BR">
       <body className={clsx(inter.className)}>
-        <Providers>
-          <HeaderMenu />
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
