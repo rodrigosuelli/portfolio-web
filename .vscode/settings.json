@@ -31,5 +31,6 @@
     "source.sortImports": "explicit",
     "source.organizeImports": "explicit",
     "source.organizeLinkDefinitions": "explicit"
-  }
+  },
+  "material-icon-theme.activeIconPack": "react", // material-icon-theme
 }
