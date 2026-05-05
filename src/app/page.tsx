@@ -2,10 +2,9 @@ import rodrigoHeadshot from '@/../public/images/rodrigo-headshot.png';
 import clsx from 'clsx';
 import { MapPin } from 'lucide-react';
 import Image from 'next/image';
+import HeaderMenu from './components/HeaderMenu/HeaderMenu';
 import SocialIcons from './components/SocialIcons/SocialIcons';
 import Typography from './components/Typography/Typography';
-
-import HeaderMenu from './components/HeaderMenu/HeaderMenu';
 
 import styles from './page.module.scss';
 
