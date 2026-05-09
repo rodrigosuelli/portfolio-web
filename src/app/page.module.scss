@@ -33,11 +33,19 @@
       bottom: utils.pxToRem(80px);
     }
   }
+
+  .sectionContainer {
+    display: flex;
+    width: 100%;
+    max-width: 80rem;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
 
 .heroImageContainer {
-  height: utils.pxToRem(300px);
   width: utils.pxToRem(280px);
+  height: utils.pxToRem(300px);
   position: relative;
   align-self: center;
 
@@ -124,6 +132,34 @@
       background-color: var(--emerald-500);
       border-radius: 50%;
     }
+  }
+}
+
+.aboutMeImageContainer {
+  width: utils.pxToRem(320px);
+  height: utils.pxToRem(380px);
+  position: relative;
+  align-self: center;
+
+  .aboutMeImage {
+    z-index: 1;
+    position: absolute;
+    width: utils.pxToRem(280px);
+    height: utils.pxToRem(360px);
+    border: utils.pxToRem(8px) solid var(--gray-50);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .aboutMeImageFrame {
+    position: absolute;
+    width: utils.pxToRem(320px);
+    height: utils.pxToRem(360px);
+    background-color: var(--gray-200);
+    top: utils.pxToRem(20px);
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
