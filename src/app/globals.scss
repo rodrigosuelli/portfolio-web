@@ -13,6 +13,7 @@
   --white: #ffffff;
   --black: #000000;
   --gray-default: #ffffff;
+  --gray-default-rgb: 255 255 255;
   --gray-50: #f9fafb;
   --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;
@@ -33,6 +34,7 @@
 
 [data-theme='dark'] {
   --gray-default: #030712;
+  --gray-default-rgb: 7 8 18;
   --gray-50: #111827;
   --gray-100: #1f2937;
   --gray-200: #374151;
@@ -55,7 +57,6 @@ html,
 body {
   width: 100%;
   max-width: 100vw;
-  overflow-x: hidden;
 }
 
 body {
